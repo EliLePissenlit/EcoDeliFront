@@ -1,0 +1,17 @@
+{
+    "welcome": "Welcome to EcoDeli",
+    "postAd": "Post an Ad",
+    "searchPlaceholder": "Search...",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "address": "Address",
+    "forgotPassword": "Forgot Password?",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google"
+}
