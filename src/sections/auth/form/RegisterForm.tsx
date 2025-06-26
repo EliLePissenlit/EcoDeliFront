@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Box, TextField, Typography, Divider } from '@mui/material';
+import React, { useState, useRef, useEffect } from "react";
+import { Box, TextField, Typography, Divider, Autocomplete } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import { Button } from '../../../components/Button/Button';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Autocomplete } from '@react-google-maps/api';
+import { useNavigate } from 'react-router-dom';
+import AddressAutocomplete from "../../../components/AddressAutocomplete";
 
 declare global {
   interface Window {
@@ -15,52 +16,124 @@ declare global {
   }
 }
 
+const API_URL = import.meta.env.VITE_API_URL;
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
 const RegisterForm = () => {
   const { t } = useTranslation();
-  const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null);
-  const [placeId, setPlaceId] = useState<string>('');
+  const theme = useTheme();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [placeId, setPlaceId] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [addressError, setAddressError] = useState('');
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+    setEmailError('');
+    setPasswordError('');
+    setConfirmPasswordError('');
+    setPhoneError('');
+    setAddressError('');
+
+    let hasError = false;
+
+    if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      setEmailError(t('emailInvalid'));
+      hasError = true;
+    }
+    if (password.length < 6) {
+      setPasswordError(t('passwordTooShort'));
+      hasError = true;
+    }
+    if (password !== confirmPassword) {
+      setConfirmPasswordError(t('passwordsDontMatch'));
+      hasError = true;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+      setPhoneError(t('phoneInvalid'));
+      hasError = true;
+    }
+    if (!address) {
+      setAddressError(t('addressRequired'));
+      hasError = true;
+    }
+    if (hasError) {
+      setLoading(false);
+      return;
+    }
+
     try {
-      const token = await window.grecaptcha.execute('6LftpVorAAAAAGhacTr0zW2TNdHt1TacMk5Trqrm', {
+      const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
         action: 'register'
       });
 
-      const formData = {
-        email: (event.target as HTMLFormElement).email.value,
-        password: (event.target as HTMLFormElement).password.value,
-        firstName: (event.target as HTMLFormElement).firstName.value,
-        lastName: (event.target as HTMLFormElement).lastName.value,
-        phone: (event.target as HTMLFormElement).phone.value,
-        placeId: placeId,
-        recaptchaToken: token
+      const body = {
+        email,
+        password,
+        firstName,
+        lastName,
+        phone,
+        placeId,
+        recaptchaToken
       };
+      console.log('Register body:', body);
 
-      // TODO: Appel API pour l'inscription
-      console.log('Form data:', formData);
-    } catch (error) {
-      console.error('Erreur reCAPTCHA:', error);
-      alert('Une erreur est survenue lors de la vérification de sécurité');
+      const response = await fetch(`${API_URL}/api/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        if (data.error && data.error.errors) {
+          data.error.errors.forEach(err => {
+            if (err.path === 'email') setEmailError(t('emailInvalid'));
+            if (err.path === 'password') setPasswordError(t('passwordInvalid'));
+            if (err.path === 'phone') setPhoneError(t('phoneInvalid'));
+          });
+        } else {
+          setError(data.message || t('registerError'));
+        }
+        setLoading(false);
+        return;
+      }
+
+      const data = await response.json();
+      console.log('Réponse OK backend register:', data);
+      if (data.data && data.data.token) {
+        localStorage.setItem('token', data.data.token);
+      }
+      setSuccess(true);
+      setLoading(false);
+      navigate('/');
+      window.location.reload();
+    } catch (err) {
+      setError('Erreur réseau');
+      setLoading(false);
     }
   };
 
   const handleGoogleSignIn = () => {
     // TODO: Implémenter l'authentification Google
-  };
-
-  const onLoad = (autocomplete: google.maps.places.Autocomplete) => {
-    setAutocomplete(autocomplete);
-  };
-
-  const onPlaceChanged = () => {
-    if (autocomplete) {
-      const place = autocomplete.getPlace();
-      if (place.place_id) {
-        setPlaceId(place.place_id);
-      }
-    }
   };
 
   return (
@@ -90,6 +163,8 @@ const RegisterForm = () => {
         name="firstName"
         autoComplete="given-name"
         autoFocus
+        value={firstName}
+        onChange={e => setFirstName(e.target.value)}
       />
       <TextField
         margin="normal"
@@ -99,6 +174,8 @@ const RegisterForm = () => {
         label={t('lastName')}
         name="lastName"
         autoComplete="family-name"
+        value={lastName}
+        onChange={e => setLastName(e.target.value)}
       />
       <TextField
         margin="normal"
@@ -108,30 +185,35 @@ const RegisterForm = () => {
         label={t('email')}
         name="email"
         autoComplete="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        error={!!emailError}
+        helperText={emailError}
       />
       <TextField
         margin="normal"
         required
         fullWidth
-        id="phone"
-        label={t('phone')}
         name="phone"
+        label={t('phone')}
         autoComplete="tel"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
+        error={!!phoneError}
+        helperText={phoneError}
       />
-      <Autocomplete
-        onLoad={onLoad}
-        onPlaceChanged={onPlaceChanged}
-      >
-        <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="address"
-          label={t('address')}
-          name="address"
-          autoComplete="street-address"
-        />
-      </Autocomplete>
+      <AddressAutocomplete
+        onSelect={place => {
+          setAddress(place.formatted_address || '');
+          setPlaceId(place.place_id || '');
+          console.log('Adresse choisie:', place.formatted_address, 'Place ID:', place.place_id);
+        }}
+      />
+      {addressError && (
+        <Typography color="error" variant="body2" sx={{ mb: 2 }}>
+          {addressError}
+        </Typography>
+      )}
       <TextField
         margin="normal"
         required
@@ -141,6 +223,10 @@ const RegisterForm = () => {
         type="password"
         id="password"
         autoComplete="new-password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        error={!!passwordError}
+        helperText={passwordError}
       />
       <TextField
         margin="normal"
@@ -151,12 +237,26 @@ const RegisterForm = () => {
         type="password"
         id="confirmPassword"
         autoComplete="new-password"
+        value={confirmPassword}
+        onChange={e => setConfirmPassword(e.target.value)}
+        error={!!confirmPasswordError}
+        helperText={confirmPasswordError}
       />
-      
+      {error && (
+        <Typography color="error" variant="body2" sx={{ mb: 2 }}>
+          {error}
+        </Typography>
+      )}
+      {success && (
+        <Typography color="success.main" variant="body2" sx={{ mb: 2 }}>
+          Inscription réussie !
+        </Typography>
+      )}
       <Button
         text={t('register')}
         type="submit"
         fullWidth
+        disabled={loading}
       />
     </Box>
   );

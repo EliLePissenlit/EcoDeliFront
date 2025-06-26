@@ -6,8 +6,10 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import LoginIcon from '@mui/icons-material/Login';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 const LANGUAGES = [
@@ -25,6 +27,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleDarkMode, currentLang, onChangeLanguage }) => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -39,13 +42,20 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleDarkMode, currentLa
   };
 
   const currentFlag = LANGUAGES.find(l => l.code === currentLang)?.flag || LANGUAGES[0].flag;
+  const isLoggedIn = Boolean(localStorage.getItem('token'));
 
   return (
     <AppBar position="static" elevation={0} sx={{ bgcolor: theme.palette.background.default, color: theme.palette.text.primary }}>
       <Toolbar sx={{ justifyContent: 'space-between', minHeight: 72 }}>
         {/* Logo */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Box component="img" src={isDarkMode ? '/logoEcoDeliBlack.svg' : '/logoEcoDeliLight.svg'} alt="EcoDeli Logo" sx={{ width: 70, height: 'auto', mr: 2 }} />
+          <Box
+            component="img"
+            src={isDarkMode ? '/logoEcoDeliBlack.svg' : '/logoEcoDeliLight.svg'}
+            alt="EcoDeli Logo"
+            sx={{ width: 70, height: 'auto', mr: 2, cursor: 'pointer' }}
+            onClick={() => navigate('/')}
+          />
         </Box>
         {/* Recherche + Déposer une annonce */}
         <Box sx={{ display: 'flex', alignItems: 'center', flex: 1, maxWidth: 700, ml: 2, mr: 2 }}>
@@ -88,11 +98,23 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, onToggleDarkMode, currentLa
           <IconButton onClick={onToggleDarkMode} sx={{ ml: 1 }}>
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
-          <Button
-            text={t('login')}
-            icon={<LoginIcon />}
-            to="/login"
-          />
+          {isLoggedIn ? (
+            <Button
+              text={t('logout')}
+              icon={<LogoutIcon />}
+              onClick={() => {
+                localStorage.removeItem('token');
+                navigate('/login');
+                window.location.reload();
+              }}
+            />
+          ) : (
+            <Button
+              text={t('login')}
+              icon={<LoginIcon />}
+              to="/login"
+            />
+          )}
         </Box>
       </Toolbar>
     </AppBar>

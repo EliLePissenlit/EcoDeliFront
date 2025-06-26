@@ -8,6 +8,7 @@ import { theme, darkTheme } from './theme/theme';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Auth from './pages/Auth/Auth';
+import Home from './pages/Home';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         onChangeLanguage={handleChangeLanguage}
       />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Auth />} />
       </Routes>
     </ThemeProvider>
