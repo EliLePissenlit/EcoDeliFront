@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logoLight.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoDeli</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVUtIxRFMZu-oI8sOAVnYe_mVdnd5Cw0E&libraries=places" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LftpVorAAAAAGhacTr0zW2TNdHt1TacMk5Trqrm&onload=onRecaptchaLoad" async defer></script>
+    <script>
+      function onRecaptchaLoad() {
+        console.log('reCAPTCHA chargé avec succès');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
