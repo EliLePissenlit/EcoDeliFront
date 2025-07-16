@@ -1,0 +1,28 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['build', '-f', 'Dockerfile', '-t', 'gcr.io/protean-fabric-461110-a4/ecodeli-frontend', '.']
+    timeout: 900s
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/protean-fabric-461110-a4/ecodeli-frontend']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'ecodeli-frontend'
+      - '--image'
+      - 'gcr.io/protean-fabric-461110-a4/ecodeli-frontend'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--region'
+      - 'europe-west1'
+
+images:
+  - 'gcr.io/protean-fabric-461110-a4/ecodeli-frontend'
+
+options:
+  machineType: 'N1_HIGHCPU_32'

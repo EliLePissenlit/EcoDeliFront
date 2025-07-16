@@ -1,0 +1,1153 @@
+{
+  "payment": {
+    "title": "Payment",
+    "description": "Payment description",
+    "pay": "Pay"
+  },
+  "layout": {
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "my_account": "My Account",
+      "pricing": "Pricing",
+      "relay_points": "Relay Points",
+      "dashboard": "Dashboard",
+      "general": "General",
+      "administration": "Administration",
+      "users": "Users",
+      "categories": "Categories",
+      "tasks": "Tasks",
+      "tasks_list": "Tasks List",
+      "create_task": "Create Task",
+      "tasks_admin": "Tasks Management",
+      "tasks_administration": "Tasks Administration",
+      "tags": {
+        "home": "home",
+        "dashboard": "dashboard",
+        "faq": "questions & answers",
+        "contact": "need help?",
+        "general": "general",
+        "profile_details": "profile details",
+        "profile_transactions": "profile transactions",
+        "profile_files": "profile files",
+        "profile_password": "profile password",
+        "profile_my_account": "my account",
+        "tasks_list": "tasks list",
+        "create_task": "create task"
+      }
+    },
+    "account_popover": {
+      "profile": "Profile",
+      "logout": "Logout",
+      "contact": "Contact"
+    },
+    "footer": {
+      "terms": "Terms of Service",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "about": "About",
+      "copyright": "Ecodeli © 2025 All rights reserved"
+    }
+  },
+  "pages": {
+    "usersAdministration": {
+      "title": "Administration des utilisateurs",
+      "description": "Gérez vos utilisateurs",
+      "table": {
+        "user": "Utilisateur",
+        "stripe_customer": "Client Stripe",
+        "status": "Statut",
+        "dates": "Dates",
+        "search": "Rechercher des utilisateurs",
+        "contact_selected": "Contacter les utilisateurs sélectionnés {{count}}",
+        "verified": "Vérifié",
+        "suspended": "Suspendu",
+        "under_surveillance": "Sous surveillance",
+        "last_login": "Dernière connexion",
+        "created": "Créé le"
+      },
+      "notifications": {
+        "contact_success": "Les utilisateurs ont été contactés avec succès",
+        "contact_error": "Une erreur est survenue lors de l'envoi des messages"
+      },
+      "modal": {
+        "title": "Contacter les utilisateurs",
+        "description": "Envoyez un message à {{count}} utilisateur(s) sélectionné(s)",
+        "message": "Votre message",
+        "cancel": "Annuler",
+        "send": "Envoyer",
+        "file_helper": "Glissez-déposez un fichier PDF ou EPUB ici, ou cliquez pour sélectionner"
+      }
+    },
+    "categoriesAdministration": {
+      "title": "Categories Administration",
+      "description": "Manage your categories"
+    },
+    "relayPointsAdministration": {
+      "title": "Relay Points Administration",
+      "description": "Manage your relay points"
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "description": "L'aventure commence ici"
+    },
+    "profile": {
+      "title": "Profil",
+      "description": "Gérez vos informations personnelles"
+    },
+    "404": {
+      "title": "Page non trouvée",
+      "description": "La page que vous cherchez n'existe pas.",
+      "button": "Retour à l'accueil"
+    },
+    "home": {
+      "title": "Accueil",
+      "meta_title": "Accueil - Votre Application",
+      "meta_description": "Bienvenue sur votre application. Fournissez ici une brève description de ce que propose votre application."
+    },
+    "about": {
+      "title": "À propos",
+      "meta_title": "À propos - Votre Application",
+      "meta_description": "Découvrez notre histoire et notre mission. Expliquez ici pourquoi votre projet existe."
+    },
+    "terms": {
+      "title": "Conditions Générales d'Utilisation",
+      "meta_title": "CGU - Votre Application",
+      "meta_description": "Nos conditions générales d'utilisation. Expliquez les règles encadrant l'utilisation de votre service."
+    }
+  },
+  "sections": {
+    "relayPointsAdministration": {
+      "title": "Relay Points Administration",
+      "description": "Manage your relay points",
+      "table": {
+        "name": "Name",
+        "description": "Description",
+        "opening_days": "Opening days",
+        "dates": "Dates",
+        "search": "Search relay points",
+        "create_relay_point": "Add a relay point",
+        "actions": "Actions",
+        "created": "Created on",
+        "updated": "Updated on"
+      },
+      "notifications": {
+        "create_success": "Relay point created successfully",
+        "create_error": "Error creating relay point",
+        "update_success": "Relay point updated successfully",
+        "update_error": "Error updating relay point",
+        "delete_success": "Relay point deleted successfully",
+        "delete_error": "Error deleting relay point"
+      },
+      "actions": {
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "modal": {
+        "create_title": "Create a relay point",
+        "edit_title": "Edit relay point",
+        "name": "Name",
+        "description": "Description",
+        "address": "Address",
+        "address_placeholder": "Enter the address of the relay point",
+        "image": "Image",
+        "opening_hours": "Opening hours",
+        "open": "Open",
+        "close": "Close",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update"
+      }
+    },
+    "usersAdministration": {
+      "title": "User Administration",
+      "description": "Manage your users",
+      "table": {
+        "user": "User",
+        "stripe_customer": "Stripe Customer",
+        "status": "Status",
+        "dates": "Dates",
+        "search": "Search users",
+        "contact_selected": "Contact selected users {{count}}",
+        "verified": "Verified",
+        "suspended": "Suspended",
+        "under_surveillance": "Under surveillance",
+        "last_login": "Last login",
+        "created": "Created on",
+        "actions": "Actions",
+        "role": {
+          "super_admin": "Super Admin",
+          "admin": "Admin",
+          "partner": "Partner",
+          "tester": "Tester",
+          "basic": "User"
+        }
+      },
+      "notifications": {
+        "contact_success": "Users contacted successfully",
+        "contact_error": "An error occurred while sending messages",
+        "suspend_success": "User suspended successfully",
+        "suspend_error": "Error suspending user",
+        "unsuspend_success": "User reactivated successfully",
+        "unsuspend_error": "Error reactivating user",
+        "file_sent_success": "File sent successfully",
+        "file_sent_error": "Error sending file"
+      },
+      "actions": {
+        "suspend": "Suspend user",
+        "unsuspend": "Reactivate user",
+        "send_file": "Send file",
+        "contact": "Contact user"
+      },
+      "modal": {
+        "title": "Contact users",
+        "description": "Send a message to {{count}} selected user(s)",
+        "message": "Your message",
+        "cancel": "Cancel",
+        "send": "Send",
+        "file_helper": "Drag and drop a PDF or EPUB file here, or click to select"
+      }
+    },
+    "categoriesAdministration": {
+      "title": "Categories Administration",
+      "description": "Manage your categories",
+      "table": {
+        "name": "Name",
+        "color": "Color",
+        "dates": "Dates",
+        "search": "Search categories",
+        "create_category": "Create category",
+        "created": "Created",
+        "updated": "Updated",
+        "actions": "Actions"
+      },
+      "notifications": {
+        "create_success": "Category created successfully",
+        "create_error": "Error creating category",
+        "update_success": "Category updated successfully",
+        "update_error": "Error updating category",
+        "delete_success": "Category deleted successfully",
+        "delete_error": "Error deleting category"
+      },
+      "actions": {
+        "edit": "Edit category",
+        "delete": "Delete category"
+      },
+      "modal": {
+        "create_title": "Create new category",
+        "edit_title": "Edit category",
+        "name": "Category name",
+        "color": "Color",
+        "icon": "Icon",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update"
+      }
+    },
+    "pricingAdministration": {
+      "title": "Pricing Administration",
+      "description": "Manage your pricing configurations and categories",
+      "configs": {
+        "title": "Pricing Configurations",
+        "description": "Manage pricing configurations for fare calculation",
+        "table": {
+          "name": "Name",
+          "base_price_small": "Base price small",
+          "base_price_medium": "Base price medium",
+          "base_price_large": "Base price large",
+          "price_per_km": "Price/km",
+          "price_per_minute": "Price/min",
+          "status": "Status",
+          "created": "Created",
+          "search": "Search configurations",
+          "new_config": "Add",
+          "actions": "Actions"
+        },
+        "notifications": {
+          "create_success": "Configuration created successfully",
+          "create_error": "Error creating configuration",
+          "update_success": "Configuration updated successfully",
+          "update_error": "Error updating configuration",
+          "activate_success": "Configuration activated successfully",
+          "activate_error": "Error activating configuration",
+          "deactivate_success": "Configuration deactivated successfully",
+          "deactivate_error": "Error deactivating configuration",
+          "no_inactive_configs": "No inactive configurations available to replace the current configuration.",
+          "switch_config_success": "Configuration switched successfully",
+          "switch_config_error": "Error switching configuration"
+        },
+        "actions": {
+          "activate": "Activate configuration",
+          "deactivate": "Deactivate configuration"
+        },
+        "modal": {
+          "create_title": "Create new configuration",
+          "edit_title": "Edit configuration",
+          "view_title": "Configuration details",
+          "name": "Configuration name",
+          "base_price_small": "Base price small (€)",
+          "base_price_medium": "Base price medium (€)",
+          "base_price_large": "Base price large (€)",
+          "price_per_km": "Price per kilometer (€)",
+          "price_per_minute": "Price per minute (€)",
+          "cancel": "Cancel",
+          "create": "Create",
+          "save": "Save",
+          "close": "Close"
+        },
+        "select_config": {
+          "title": "Select a configuration",
+          "description": "To deactivate this configuration, you must first select another configuration to activate.",
+          "select_label": "Configuration to activate",
+          "confirm": "Switch configuration"
+        },
+        "status": {
+          "active": "Active",
+          "inactive": "Inactive"
+        }
+      },
+      "categories": {
+        "title": "Package Categories",
+        "description": "Manage package categories for price calculation",
+        "simulation": {
+          "title": "Price calculation simulation",
+          "description": "Test price calculation by entering departure and arrival addresses",
+          "start_point": "Start point:",
+          "end_point": "End point:",
+          "start_address": "Departure address",
+          "end_address": "Arrival address",
+          "category": "Category:",
+          "package_category": "Package category",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "calculate_price": "Calculate price",
+          "reset": "Reset",
+          "calculation_error": "Calculation error:",
+          "result_title": "Calculation result:",
+          "min_price": "Minimum price:",
+          "max_price": "Maximum price:",
+          "estimated_distance": "Estimated distance:",
+          "estimated_duration": "Estimated duration:",
+          "minutes": "minutes",
+          "km": "km"
+        },
+        "list": {
+          "title": "Available package categories",
+          "description": "These categories define the different types of packages available for price calculation",
+          "category": "Category",
+          "max_volume": "Max volume (L)",
+          "max_weight": "Max weight (kg)",
+          "emoji": "Emoji"
+        },
+        "package_types": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        }
+      }
+    },
+    "home": {
+      "hero": {
+        "title": "Bienvenue sur notre plateforme",
+        "subtitle": "Une solution innovante pour tous vos besoins",
+        "button": "Découvrir"
+      },
+      "introduction": {
+        "mission": {
+          "title": "Notre Mission",
+          "content": "Décrivez ici la mission de votre entreprise ou produit : quel problème vous résolvez et pourquoi."
+        },
+        "vision": {
+          "title": "Notre Vision",
+          "content": "Expliquez la vision à long terme de votre projet et comment il va évoluer."
+        }
+      },
+      "what": {
+        "title": "Qui sommes-nous et ce que nous faisons ?",
+        "content": "Décrivez ici votre entreprise, son histoire et ses valeurs. Montrez ce qui vous rend unique."
+      },
+      "team": {
+        "title": "Notre équipe",
+        "content": "Présentez les membres clés de votre équipe et leur rôle. Humanisez votre marque."
+      },
+      "carousel": {
+        "title": "Galerie",
+        "content": "Découvrez nos réalisations en images"
+      },
+      "location": {
+        "title": "Où nous trouver ?",
+        "map": {
+          "title": "Notre Adresse"
+        }
+      },
+      "features": {
+        "title": "Nos Fonctionnalités Principales",
+        "feature": {
+          "title": "Fonctionnalité",
+          "content": "Détaillez ici une ou plusieurs fonctionnalités clés de votre produit."
+        }
+      },
+      "features_icons": {
+        "title": "Nos Points Forts",
+        "content": "Des solutions adaptées à vos besoins"
+      },
+      "gallery": {
+        "title": "Notre Galerie",
+        "content": "Découvrez nos réalisations en images",
+        "carousel": {
+          "title": "Nos Projets",
+          "alt": "Image {{number}}",
+          "prev": "Précédent",
+          "next": "Suivant"
+        },
+        "mosaic": {
+          "title": "Notre Espace de Travail",
+          "content": "Un environnement moderne et collaboratif",
+          "button": "Découvrir notre espace",
+          "alt": "Image {{number}}"
+        }
+      },
+
+      "about": {
+        "title": "À propos",
+        "description": "Découvrez notre histoire et notre mission",
+        "team": {
+          "title": "Notre Équipe",
+          "content": "Des experts passionnés à votre service",
+          "member": {
+            "role": "Rôle",
+            "alt": "Photo de {{name}}"
+          }
+        },
+        "location": {
+          "title": "Où nous trouver ?",
+          "content": "Venez nous rencontrer",
+          "map": {
+            "title": "Notre Adresse",
+            "address": "24 rue Berthollet, 75005 Paris, France",
+            "phone": "+33 6 84 99 00 89",
+            "email": "contact@entreprise.com"
+          }
+        }
+      },
+      "testimonials": {
+        "title": "Nos clients témoignent",
+        "content": "Les retours sont importants pour nous",
+        "card": {
+          "quote": "Témoignage",
+          "rating": "Note",
+          "posted": "Publié le {{date}}"
+        }
+      },
+      "cta": {
+        "title": "Prêt à commencer ?",
+        "subtitle": "Rejoignez-nous dès aujourd'hui et découvrez toutes nos fonctionnalités",
+        "button": "Commencer"
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "description": "Découvrez les réponses aux questions fréquentes",
+      "category": {
+        "account": {
+          "title": "Compte",
+          "faqs": [
+            {
+              "question": "Je n'ai pas reçu mon mot de passe",
+              "answer": "Ajoutez ici des instructions détaillées pour aider les utilisateurs à récupérer leur mot de passe."
+            },
+            {
+              "question": "Comment créer un compte ?",
+              "answer": "Expliquez ici les étapes pour s'inscrire, en mettant l'accent sur la simplicité du processus."
+            },
+            {
+              "question": "Comment réinitialiser mon mot de passe ?",
+              "answer": "Détaillez les étapes permettant de changer un mot de passe oublié."
+            }
+          ]
+        }
+      }
+    },
+    "terms": {
+      "title": "Conditions Générales d'Utilisation",
+      "section1": {
+        "title": "1. Objet",
+        "content": "Définissez ici l'objectif des conditions d'utilisation de votre application."
+      },
+      "section2": {
+        "title": "2. Accès au service",
+        "content": "Expliquez si un compte est requis pour utiliser certaines fonctionnalités."
+      },
+      "section3": {
+        "title": "3. Responsabilités",
+        "content": "Précisez ici ce que vous attendez de vos utilisateurs et les responsabilités de votre entreprise."
+      },
+      "section4": {
+        "title": "4. Propriété intellectuelle",
+        "content": "Ajoutez une section sur les droits de propriété intellectuelle relatifs à votre produit et son contenu."
+      },
+      "section5": {
+        "title": "5. Protection des données",
+        "content": "Expliquez comment vous respectez la législation sur la protection des données, notamment le RGPD."
+      }
+    },
+    "contact": {
+      "title": "Contact us",
+      "form": {
+        "success_message": "Message sent successfully",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send",
+        "required_fields": "* Required fields",
+        "name": "Name",
+        "phone": "Phone",
+        "subject": "Subject"
+      },
+      "description": "We are here to help you. Feel free to contact us. Add instructions here about the different ways to contact us."
+    }
+  },
+  "components": {
+    "button": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "delete": "Delete",
+      "sign_in": "Sign in",
+      "sign_out": "Sign out",
+      "sign_up": "Sign up",
+      "reset_password": "Reset password",
+      "forgot_password": "Forgot password?"
+    },
+    "form": {
+      "required": "Required field",
+      "password_min_length": "Password too short",
+      "password_number_required": "Password must contain a number",
+      "password_lowercase_required": "Password must contain a lowercase letter",
+      "password_uppercase_required": "Password must contain an uppercase letter",
+      "confirm_password_placeholder": "Confirm password",
+      "name_placeholder": "Name",
+      "firstname_placeholder": "Firstname",
+      "phone_placeholder": "Phone",
+      "address_placeholder": "Address",
+      "city_placeholder": "City",
+      "password_symbol_required": "Password must contain a symbol",
+      "password_min_length_error": "Password too short",
+      "password_number_required_error": "Password must contain a number",
+      "password_lowercase_required_error": "Password must contain a lowercase letter",
+      "password_uppercase_required_error": "Password must contain an uppercase letter",
+      "password_symbol_required_error": "Password must contain a symbol",
+      "current_password": "Current password",
+      "password_weak": "Weak password",
+      "password_strong": "Strong password",
+      "current_password_placeholder": "Current password",
+      "new_password": "New password",
+      "new_password_placeholder": "New password",
+      "invalid_email": "Invalid email",
+      "password_too_short": "Password too short",
+      "password_too_weak": "Password too weak",
+      "email": "Email",
+      "password": "Password",
+      "password_placeholder": "Password",
+      "email_placeholder": "example@email.com",
+      "sign_in": "Sign in",
+      "sign_up": "Sign up",
+      "reset_password": "Reset password",
+      "forgot_password": "Forgot password?",
+      "required_fields": "* Required fields",
+      "return_to_sign_in": "Return to sign in",
+      "invalid_phone": "Invalid phone number"
+    },
+    "dialog": {
+      "confirm": "Confirm",
+      "cancel": "Annuler"
+    }
+  },
+  "common": {
+    "card": {
+      "expiry": "Expiry date"
+    },
+    "loading": "Loading...",
+    "add_to_cart": "Add to cart",
+    "title": "Title",
+    "description": "Description",
+    "relay_point": "Relay point",
+    "increase_quantity": "Increase quantity",
+    "decrease_quantity": "Decrease quantity",
+    "error": "An error occurred",
+    "success": "Operation successful",
+    "no_data": "No data available",
+    "folder_name": "Folder name",
+    "folder_name_placeholder": "Folder name",
+    "folder_name_error": "Folder name is required",
+    "create": "Create",
+    "update": "Update",
+    "skip": "Skip",
+    "buy_now": "Buy now",
+    "close": "Close",
+    "last": "Finish",
+    "finish": "Finish",
+    "folder_created": "Folder created successfully",
+    "select_folder": "Select folder",
+    "root_folder": "Root folder",
+    "cancel": "Cancel",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "upload": "Upload",
+    "files_uploaded": "File(s) uploaded successfully",
+    "created_at": "Created at",
+    "updated_at": "Updated at",
+    "remove_all": "Remove all",
+    "save_changes": "Save changes",
+    "create_folder": "Create folder",
+    "browse": "browse",
+    "through_your_machine": "through your machine",
+    "required_fields": "* Required fields",
+    "or": "OR",
+    "upload_dialog": "Upload files",
+    "upload_dialog_subtitle": "Add files to your account",
+    "upload_dialog_description": "Drag and drop or",
+    "member_since": "Member since",
+    "last_updated": "Last updated",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "phone": "Phone",
+    "allowed_files": "Allowed formats",
+    "upload_avatar": "Change photo",
+    "not_specified": "Not specified",
+    "image_selected": "Image selected",
+    "minutes": "minutes",
+    "hours": "hours",
+    "new_image": "New image",
+    "current_image": "Current image",
+    "remove": "Remove",
+    "sending": "Sending...",
+    "creating": "Creating..."
+  },
+  "buttons": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "remove": "Remove",
+    "update": "Update",
+    "download": "Download",
+    "upload": "Upload",
+    "view": "View",
+    "details": "Details",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "reset": "Reset",
+    "close": "Close",
+    "continue": "Continue",
+    "search": "Search"
+  },
+  "tooltips": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "remove": "Remove",
+    "update": "Update",
+    "download": "Download",
+    "upload": "Upload",
+    "view": "View",
+    "details": "Details",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "reset": "Reset",
+    "close": "Close",
+    "continue": "Continue",
+    "search": "Search"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "in_progress": "In Progress",
+    "published": "Published",
+    "draft": "Draft",
+    "failed": "Failed",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "validated": "Validated",
+    "rejected": "Rejected",
+    "accepted": "Accepted",
+    "done": "Done"
+  },
+  "auth": {
+    "sign_in": {
+      "success_message": "Sign in successful",
+      "title": "Sign in",
+      "subtitle": "Sign in to your account",
+      "redirect_link": {
+        "text": "Don't have an account yet?",
+        "link_text": "Sign up",
+        "forgot_password": "Forgot password?",
+        "forgot_password_link_text": "Reset"
+      }
+    },
+    "sign_up": {
+      "success_message": "Sign up successful",
+      "title": "Sign up",
+      "subtitle": "Create your account",
+      "redirect_link": {
+        "text": "Already have an account?",
+        "link_text": "Sign in"
+      },
+      "terms_of_service": "Terms of service",
+      "privacy_policy": "Privacy policy"
+    },
+    "reset_password": {
+      "title": "Reset password",
+      "subtitle": "Enter your email to reset your password",
+      "redirect_link": {
+        "text": "Back to",
+        "link_text": "sign in"
+      }
+    }
+  },
+  "expectedErrors": {
+    "auth": {
+      "account_suspended": "Compte suspendu",
+      "invalid_credentials": "Identifiants invalides",
+      "user_already_exists": "Utilisateur déjà existant",
+      "email_not_verified": "Email non vérifié"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "all": "All",
+    "unread": "Unread",
+    "archived": "Archived",
+    "mark_all_as_read": "Mark all as read",
+    "transaction": {
+      "NEW_POST": "A new post has been published",
+      "SUCCEEDED": "A payment was successful",
+      "INVOICE_ADDED": "An invoice has been added to your account",
+      "FAILED": "A payment failed",
+      "EBOOK_ADDED": "An ebook has been added to your account",
+      "SUBSCRIPTION_CANCELED": "A subscription has been canceled",
+      "SUBSCRIPTION_EXPIRED": "A subscription has expired",
+      "TASK_APPLICATION_RECEIVED": "A task application has been received",
+      "TASK_APPLICATION_ACCEPTED": "A task application has been accepted",
+      "TASK_APPLICATION_REJECTED": "A task application has been rejected",
+      "TASK_COMPLETED": "A task has been completed",
+      "TASK_VALIDATED": "A task has been validated",
+      "TASK_STATUS_CHANGED": "A task status has changed",
+      "MESSAGE": "A mail has been received",
+      "SUBSCRIPTION_ACTIVE": "A subscription is active",
+      "SUBSCRIPTION_INITIATED": "A subscription has been initiated"
+    }
+  },
+  "profile": {
+    "transactions": {
+      "subscriptions": {
+        "title": "My subscriptions",
+        "description": "Manage your active subscriptions and view history",
+        "start_date": "Start date",
+        "end_date": "End date",
+        "auto_renew": "Auto-renewal",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "auto_renew_enabled": "Auto-renewal is enabled",
+        "auto_renew_disabled": "Auto-renewal is disabled",
+        "active": "Active",
+        "expiring": "Expiring soon",
+        "failed": "Failed",
+        "pending": "Pending",
+        "processing": "Processing",
+        "canceled": "Canceled",
+        "unknown": "Unknown"
+      },
+      "title": "Transactions",
+      "description": "Manage your transactions",
+      "cancel_success": "Subscription canceled successfully",
+      "cancel_error": "Error canceling subscription",
+      "table": {
+        "date": "Date",
+        "amount": "Amount",
+        "status": "Status",
+        "description": "Description",
+        "name": "Name",
+        "actions": "Actions"
+      },
+      "status": {
+        "active": "Active",
+        "canceled": "Canceled",
+        "expired": "Expired",
+        "pending": "Pending",
+        "processing": "Processing",
+        "failed": "Failed",
+        "succeeded": "Succeeded",
+        "unknown": "Unknown",
+        "payment": "Payment"
+      },
+      "actions": {
+        "cancel": "Cancel subscription",
+        "download": "Download invoice"
+      },
+      "no_data": {
+        "title": "No transactions",
+        "description": "You have not made any transactions yet"
+      },
+      "payment_methods": {
+        "cannot_delete_with_subscription": "Cannot delete a card while a subscription is active",
+        "delete_success": "Card deleted successfully",
+        "delete_error": "Error deleting card",
+        "title": "Payment methods",
+        "description": "Manage your payment methods",
+        "cards": "Your payment methods",
+        "no_data": "You have not added any payment methods yet"
+      }
+    },
+    "title": "Profile",
+    "description": "Manage your personal information",
+    "details": {
+      "avatar_update_success": "Profile picture updated successfully",
+      "avatar_update_error": "Error updating profile picture",
+      "update_success": "Information updated successfully",
+      "update_error": "Error updating information",
+      "title": "Personal information",
+      "content": "Manage your personal information, such as your name, email, and profile picture."
+    },
+    "files": {
+      "title": "Files",
+      "USER_INVOICES_FOLDER": "Invoices folder",
+      "description": "Manage your files",
+      "type": "Type",
+      "modified": "Modified",
+      "properties": "Properties",
+      "delete": "Delete",
+      "delete_success": "File deleted successfully",
+      "download": "Download",
+      "download_success": "File downloaded successfully",
+      "upload_success": "File(s) uploaded successfully",
+      "download_error": "Error downloading file"
+    },
+    "reset_password": {
+      "title": "Change password",
+      "description": "Change your password here by entering your new password and your current password"
+    },
+    "reset_password_while_logged_in": {
+      "success": "Password changed successfully"
+    }
+  },
+  "tasks": {
+    "administration": {
+      "title": "Tasks Administration",
+      "pending": "Pending",
+      "published": "Published",
+      "in_progress": "In Progress",
+      "no_tasks": "No tasks found",
+      "completed": "Completed",
+      "draft": "Draft",
+      "failed": "Failed",
+      "success": "Success",
+      "error": "Error",
+      "warning": "Warning",
+      "info": "Information",
+      "validated": "Validated",
+      "rejected": "Rejected",
+      "accepted": "Accepted"
+    },
+    "create": {
+      "title": "Create Task",
+      "subtitle": "Create a new service or delivery task",
+      "submit": "Create Task",
+      "steps": {
+        "basic_info": "Basic Information",
+        "task_type": "Task Type",
+        "address": "Address",
+        "review": "Review"
+      }
+    },
+    "list": {
+      "title": "Tasks List",
+      "subtitle": "Discover and apply to available tasks",
+      "no_data": "No tasks available",
+      "filters": {
+        "title": "Search for a job or service",
+        "status": "Status",
+        "all_statuses": "All statuses",
+        "type": "Type",
+        "all_types": "All types",
+        "category": "Category",
+        "category_placeholder": "Search for a category...",
+        "price_min": "Min (€)",
+        "price_max": "Max (€)",
+        "radius": "Search radius",
+        "km": "km",
+        "1km": "1km",
+        "25km": "25km",
+        "50km": "50km",
+        "reset": "Reset"
+      },
+      "sort": {
+        "title": "Sort by",
+        "created_at": "Creation date",
+        "updated_at": "Update date",
+        "price": "Price",
+        "title_label": "Title",
+        "status": "Status"
+      }
+    },
+    "form": {
+      "basic_info": {
+        "title": "Basic Information",
+        "title_label": "Task Title",
+        "title_placeholder": "Ex: Apartment Moving",
+        "description_label": "Description",
+        "description_placeholder": "Describe in detail what needs to be done...",
+        "task_type_label": "Task Type",
+        "service": "Service",
+        "shipping": "Shipping",
+        "image_label": "Task Image",
+        "image_helper": "Accepted formats: JPG, PNG, GIF. Max size: 5MB"
+      },
+      "service": {
+        "title": "Service Details",
+        "category_label": "Category",
+        "category_placeholder": "Select a category",
+        "duration_label": "Estimated Duration (hours)",
+        "duration_placeholder": "Ex: 2"
+      },
+      "shipping": {
+        "title": "Shipping Details",
+        "package_category_label": "Package Type",
+        "small": "Small Package",
+        "medium": "Medium Package",
+        "large": "Large Package",
+        "fragile": "Fragile",
+        "pickup_address_label": "Pickup Address",
+        "delivery_address_label": "Delivery Address",
+        "package_details_label": "Package Details",
+        "weight_label": "Weight (kg)",
+        "dimensions_label": "Dimensions (cm)",
+        "length": "Length",
+        "width": "Width",
+        "height": "Height",
+        "category_helper": "Optional: Choose a category to classify your delivery"
+      },
+      "address": {
+        "title": "Address",
+        "service_address_label": "Service Address",
+        "pickup_address_label": "Pickup Address",
+        "delivery_address_label": "Delivery Address"
+      },
+      "review": {
+        "title": "Review",
+        "description": "Verify information before creating the task",
+        "basic_info": "Basic Information",
+        "task_type": "Task Type",
+        "address": "Address",
+        "submit": "Create Task",
+        "price_estimation": "Price Estimation",
+        "calculating_price": "Calculating price...",
+        "price_range": "Price Range",
+        "estimated_distance": "Estimated Distance",
+        "estimated_duration": "Estimated Duration",
+        "price_not_available": "Price estimation is not available at the moment"
+      }
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "card": {
+      "view_details": "View Details",
+      "apply": "Apply",
+      "share": "Share",
+      "contact": "Contact"
+    },
+    "summary": {
+      "title": "Summary",
+      "subtitle": "Task overview",
+      "basic_info": "Basic Information",
+      "service_details": "Service Details",
+      "shipping_details": "Shipping Details",
+      "addresses": "Addresses",
+      "description_preview": "Description Preview",
+      "dimensions": "Dimensions"
+    },
+    "detail": {
+      "title": "Task Details",
+      "posted_by": "Posted by",
+      "apply": "Apply",
+      "start_task": "Start",
+      "complete": "Complete",
+      "validate_completion": "Validate Completion",
+      "messages": "Messages",
+      "basic_info": "Basic Information",
+      "category": "Category",
+      "type": "Type",
+      "estimated_duration": "Estimated Duration",
+      "hours": "hours",
+      "price": "Price",
+      "location": "Location",
+      "applications": "Applications",
+      "quick_actions": "Quick Actions",
+      "share": "Share",
+      "contact": "Contact",
+      "additional_info": "Additional Information",
+      "validation_code": "Validation Code",
+      "validation_code_help": "Enter the validation code provided",
+      "start_task_info": "To start this task, you need to enter the validation code that was provided to you.",
+      "validate_completion_info": "To validate the completion of this task, confirm the validation code.",
+      "completed_at": "Completed at",
+      "validated_at": "Validated at",
+      "apply_dialog": {
+        "title": "Apply to this task",
+        "message": "Your application message"
+      },
+      "reject_dialog": {
+        "title": "Reject Application",
+        "reason": "Rejection reason"
+      },
+      "already_applied": "Already Applied",
+      "service_location": "Service location",
+      "shipping_route": "Shipping route"
+    },
+    "messages": {
+      "title": "Messages",
+      "with": "Conversation with",
+      "conversation": "Conversation",
+      "no_messages": "No messages",
+      "start_conversation": "Start the conversation",
+      "type_message": "Type your message...",
+      "task_info": "Task Information",
+      "status": "Status",
+      "category": "Category",
+      "price": "Price",
+      "created_at": "Created at",
+      "price_on_completion": "Price on completion",
+      "quick_actions": "Quick Actions",
+      "view_task": "View Task",
+      "share_task": "Share Task",
+      "tips": "Tips",
+      "tip_1": "Be clear and precise in your messages",
+      "tip_2": "Respond quickly to maintain good communication",
+      "tip_3": "Use details to clarify your needs",
+      "types": {
+        "text": "Message",
+        "system": "System",
+        "validation_code": "Validation Code"
+      }
+    },
+    "applications": {
+      "status": {
+        "pending": "Pending",
+        "accepted": "Accepted",
+        "rejected": "Rejected",
+        "completed": "Completed",
+        "validated": "Validated"
+      },
+      "accept": "Accept",
+      "reject": "Reject"
+    },
+    "actions": {
+      "start": "Start",
+      "complete": "Complete",
+      "validate": "Validate",
+      "start_confirmation_title": "Start Task",
+      "start_confirmation_message": "Are you sure you want to start this task? This action will mark the beginning of the work.",
+      "complete_confirmation_title": "Mark as Completed",
+      "complete_confirmation_message": "Are you sure you want to mark this task as completed? This action will generate a validation code that you need to provide to the provider.",
+      "validate_confirmation_title": "Validate Task",
+      "validate_confirmation_message": "To validate this task, enter the validation code that was provided to you.",
+      "validate_success": "Task validated successfully",
+      "complete_success": "Task marked as completed successfully",
+      "start_success": "Task started successfully"
+    }
+  },
+  "dashboard": {
+    "pending_tasks": {
+      "title": "Pending tasks for publication",
+      "no_tasks": "No pending tasks for publication",
+      "status_pending": "Pending",
+      "price_to_calculate": "Price to calculate",
+      "by": "By",
+      "view_details": "View details",
+      "approve": "Approve",
+      "reject": "Reject",
+      "reject_dialog": {
+        "title": "Reject task",
+        "reason": "Rejection reason"
+      },
+      "rejecting": "Rejecting..."
+    },
+    "applications_in_progress": {
+      "title": "Tasks where I am a participant",
+      "empty": "No ongoing tasks"
+    },
+    "tasks_in_progress": {
+      "add_stop": "Add a stop point",
+      "add_stop_title": "Add a stop point",
+      "confirm_stop": "Confirm stop point",
+      "location_label": "Your current position",
+      "use_current_location": "Use my current location",
+      "current_position": "My current position"
+    },
+    "sections": {
+      "pending_tasks": {
+        "title": "Pending tasks",
+        "tooltip": "Tasks pending publication by administrators"
+      },
+      "tasks_to_start": {
+        "title": "Tasks to start",
+        "tooltip": "Accepted tasks you can start"
+      },
+      "tasks_to_close": {
+        "title": "Tasks to close",
+        "tooltip": "Your ongoing tasks to mark as completed"
+      },
+      "tasks_to_validate": {
+        "title": "Tasks to validate",
+        "tooltip": "Completed tasks to validate with a code"
+      },
+      "my_tasks_with_applications": {
+        "title": "My tasks with applications",
+        "tooltip": "Your tasks with pending applications"
+      },
+      "no_section_for_role": "No section available for your role"
+    }
+  },
+  "walktour": {
+    "profile": {
+      "details": {
+        "title": "Personal Information",
+        "content": "Manage your personal information, such as your name, email, and profile picture."
+      },
+      "transactions": {
+        "title": "Transactions",
+        "content": "View your transaction history and manage your subscriptions."
+      },
+      "files": {
+        "title": "Files",
+        "content": "Find all your important documents, such as your invoices."
+      },
+      "security": {
+        "title": "Security",
+        "content": "Change your password to secure your account."
+      }
+    }
+  }
+}
